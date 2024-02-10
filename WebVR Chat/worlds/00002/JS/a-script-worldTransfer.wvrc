@@ -1,0 +1,40 @@
+
+// Function to fade out the scene
+function fadeOutScene() {
+  // Get the scene element and camera position
+  var scene = document.querySelector('a-scene');
+  var camera = document.getElementById('rig');
+
+  // Calculate the position of the plane in front of the camera
+  var cameraPosition = camera.getAttribute('position');
+  var planePosition = {
+    x: cameraPosition.x,
+    y: cameraPosition.y,
+    z: cameraPosition.z,  // Adjust the distance based on your scene setup
+  };
+
+  // Create a black plane to cover the entire view
+  var blackoutEntity = document.createElement('a-box');
+  blackoutEntity.setAttribute('material', 'color: black; shader: flat; opacity: 0; side: double');
+  blackoutEntity.setAttribute('position', planePosition);
+  blackoutEntity.setAttribute('height', 5);
+
+  scene.appendChild(blackoutEntity);
+
+  // Add an animation component to fade out the plane
+  blackoutEntity.setAttribute('animation__fade', {
+    property: 'material.opacity',
+    dur: 2000,         // Animation duration in milliseconds
+    from: 0,           // Initial opacity (fully transparent)
+    to: 1,             // Target opacity (fully opaque)
+    easing: 'linear'   // Animation easing function
+  });
+}
+    // Example: Change WorldID in the iframe and notify the parent
+    function changeWorldID(newWorldID) {
+      WorldID = newWorldID;
+      console.log('WorldID updated in iframe:', WorldID);
+
+      // Notify the parent about the updated WorldID
+      parent.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
+    }

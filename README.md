@@ -20,7 +20,7 @@
 
 <h1>How can I (you) help!</h1>
 
-<p>ㅤㅤYour feedback is key to the success of this! Also, just testing this is good enough for me. IF your an A-Frame developer, and you want to post a world on this, let me know at pebblecatstudios@gmail.com</p>
+<p>ㅤㅤYour feedback is key to the success of this! Also, just testing this is good enough for me. IF your an A-Frame developer, and you want to post a world on this, let me know at E-Mail (pebblecatstudios@gmail.com) or Discord (PebbleCat) [Links Below]. If you also know how to use Networked-aframe, you'd be a big help if you could help me with some stuff.</p>
 
 <h1>In Game Images</h1>
 
@@ -31,5 +31,8 @@
 <img src="https://github.com/funing36/WebVR-Chat/assets/146106615/ed0cfa53-dfd0-4720-80b5-bc58921faebd" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="450" height="250" />
 <img src="https://github.com/funing36/WebVR-Chat/assets/146106615/e89f6e58-59ae-4393-9c06-7b9f453f1b08" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="450" height="250" />
 <img src="https://github.com/funing36/WebVR-Chat/assets/146106615/c7e0cf2d-1755-4eb6-baa8-f7cf9cfef150" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="450" height="250" />
+
+E-Mail: https://mail.google.com/mail/u/0/?fs=1&to=pebblecatstudios@gmail.com&su=Put%20Subject%20Here.&body=Enter%20Text%20Here&tf=cm
+Discord: 
 
 --The last picture was me working with the camera, cool picture out of it though.

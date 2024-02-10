@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+  <link rel="shortcut icon" href="./favicon128x128.ico" type="image/x-icon">
+  <title>Web VRChat</title>
+  <style>
+    html, body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    var WorldID = 'login';
+    var IFrameRefresh = 0; // Initial value
+    var iframe; // Declare iframe globally
+
+    function loadScene() {
+      iframe = document.createElement('iframe');
+      iframe.src = `./worlds/${WorldID}/a-scene.wvrc.html`;
+      iframe.style.width = '100%';
+      iframe.style.height = '100vh';
+      iframe.style.border = 'none';
+
+      // Attach a message event listener to receive messages from the iframe
+      window.addEventListener('message', handleMessage);
+
+      document.body.appendChild(iframe);
+
+      // Optional: Add any additional logic or callbacks after loading scene
+      // You might want to call functions that depend on the loaded scene here
+    }
+
+// Function to refresh the iframe
+function refreshIframe() {
+  if (iframe) {
+    // Remove the existing iframe from the DOM
+    iframe.parentNode.removeChild(iframe);
+  }
+
+  // Create a new iframe element
+  iframe = document.createElement('iframe');
+  iframe.src = `./worlds/${WorldID}/a-scene.wvrc.html`;
+  iframe.style.width = '100%';
+  iframe.style.height = '100vh';
+  iframe.style.border = 'none';
+
+  // Attach a message event listener to receive messages from the new iframe
+  window.addEventListener('message', handleMessage);
+
+  // Append the new iframe to the document body
+  document.body.appendChild(iframe);
+}
+
+
+    // Function to change WorldID in the iframe and trigger refresh
+function changeWorldID(newWorldID) {
+  WorldID = newWorldID;
+  console.log('WorldID updated in parent:', WorldID);
+
+  // Notify the iframe about the updated WorldID
+  var iframe = document.querySelector('iframe');
+  iframe.contentWindow.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
+}
+
+
+    function handleMessage(event) {
+  if (event.data && event.data.type === 'updateWorldID') {
+    WorldID = event.data.value; // Update the WorldID from the message
+    console.log('WorldID updated in parent:', WorldID);
+    changeWorldID(WorldID);
+
+    // Introduce a small delay before refreshing the iframe
+    setTimeout(() => {
+      refreshIframe();
+    }, 5000);
+  } else if (event.data === 'refreshIframe') {
+    
+  } else if (event.data.hasOwnProperty('IFrameRefresh')) {
+    IFrameRefresh = event.data.IFrameRefresh;
+  }
+}
+
+
+    document.addEventListener('DOMContentLoaded', loadScene);
+  </script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <!-- Your HTML content here -->
+</body>
+</html>

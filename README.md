@@ -32,7 +32,7 @@
 <img src="https://github.com/funing36/WebVR-Chat/assets/146106615/e89f6e58-59ae-4393-9c06-7b9f453f1b08" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="450" height="250" />
 <img src="https://github.com/funing36/WebVR-Chat/assets/146106615/c7e0cf2d-1755-4eb6-baa8-f7cf9cfef150" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="450" height="250" />
 
-E-Mail: https://mail.google.com/mail/u/0/?fs=1&to=pebblecatstudios@gmail.com&su=Put%20Subject%20Here.&body=Enter%20Text%20Here&tf=cm
-Discord: 
-
 --The last picture was me working with the camera, cool picture out of it though.
+
+<p>E-Mail: https://mail.google.com/mail/u/0/?fs=1&to=pebblecatstudios@gmail.com&su=Put%20Subject%20Here.&body=Enter%20Text%20Here&tf=cm</p>p>
+<p></p>Discord: https://discord.gg/rUdgBN3jwR</p>

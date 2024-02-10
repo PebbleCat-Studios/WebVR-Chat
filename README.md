@@ -34,5 +34,5 @@
 
 --The last picture was me working with the camera, cool picture out of it though.
 
-<p>E-Mail: https://mail.google.com/mail/u/0/?fs=1&to=pebblecatstudios@gmail.com&su=Put%20Subject%20Here.&body=Enter%20Text%20Here&tf=cm</p>p>
+<p>E-Mail: https://mail.google.com/mail/u/0/?fs=1&to=pebblecatstudios@gmail.com&su=Put%20Subject%20Here.&body=Enter%20Text%20Here&tf=cm</p>
 <p></p>Discord: https://discord.gg/rUdgBN3jwR</p>

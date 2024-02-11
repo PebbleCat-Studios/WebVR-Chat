@@ -22,6 +22,10 @@
 
 <p>ㅤㅤYour feedback is key to the success of this! Also, just testing this is good enough for me. IF your an A-Frame developer, and you want to post a world on this, let me know at E-Mail (pebblecatstudios@gmail.com) or Discord (PebbleCat) [Links Below]. If you also know how to use Networked-aframe, you'd be a big help if you could help me with some stuff.</p>
 
+<h1>Did you create everything?</h1>
+
+<p>As I wish I did, no. I used assets from the internet and each world should have an easy-to-find credits button witch includes full credits to all assets I used. Sence world #00002 is WIP, their isnt a credits page on that, but will be implamented soon. :3</p>
+
 <h1>In Game Images</h1>
 
 

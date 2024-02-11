@@ -12,6 +12,8 @@
 
 <p>ㅤㅤOnce downloaded, some computers will allow you to run a local host directly from your computer, but most of the time, you'll need help to get it working. I would recomend using Github Codespaces or VSCode and have the extention "Live Server", then open up "/WebVRChat/index.html" and press go live on the bottom right.</p>
 
+<p>Alternativly, you can just visit the link on the top right to launch it instantly. Loading the scene might take a while, depending on your internet speed.</p>
+
 
 
 <h1>Why is it so buggy?</h1>

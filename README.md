@@ -26,7 +26,7 @@
 
 <h1>Did you create everything?</h1>
 
-<p>As I wish I did, mostly no. I used assets from the internet and each world should have an easy-to-find credits button witch includes full credits to all assets I used. Sence world #00002 is WIP, their isnt a credits page on that, but will be implamented soon. What I did make is the US and the Buttions that is a text box in a blue box outlined in cyan. :3</p>
+<p>As I wish I did, mostly no. I used assets from the internet and each world should have an easy-to-find credits button witch includes full credits to all assets I used. Sence world #00002 is WIP, their isnt a credits page on that, but will be implamented soon. What I did make is the UI and the Buttions that is a text box in a blue box outlined in cyan. :3</p>
 
 <h1>In Game Images</h1>
 

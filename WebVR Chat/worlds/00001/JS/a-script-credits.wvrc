@@ -1,0 +1,109 @@
+     //Credit System
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get the OfflineButton element
+        var OpenCreditsButton = document.getElementById('OpenCreditsButton');
+    
+        // Add a click event listener to the button
+        OpenCreditsButton.addEventListener('click', function () {
+          // Call the animateAnouncment1 function when the button is clicked
+          Click3Sou.play();
+          OpenCreditsFunction();
+          OpenCreditsCloseFunction();
+          OpenOpenCreditsButtionFunction();
+          
+        });
+      });  
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get the OfflineButton element
+        var CloseCreditsButton = document.getElementById('CloseCreditsButton');
+    
+        // Add a click event listener to the button
+        CloseCreditsButton.addEventListener('click', function () {
+          // Call the animateAnouncment1 function when the button is clicked
+          console.log('Buttion Pressed!');
+          Click2Sou.play();
+          CloseCreditsFunction();
+          CloseCreditsCloseFunction();
+          CloseOpenCreditsButtionCloseFunction();
+        });
+      });  
+      
+        function CloseCreditsFunction() {
+      // Get the WorldCredits element
+      var WorldCredits = document.getElementById('WorldCredits');
+      // Add an animation component to size down WorldCredits
+      WorldCredits.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function OpenCreditsCloseFunction() {
+      // Get the CloseCreditsButton element
+      var CloseCreditsButton = document.getElementById('CloseCreditsButton');
+      // Add an animation component to size down CloseCreditsButton
+      CloseCreditsButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function CloseCreditsCloseFunction() {
+      // Get the CloseCreditsButton element
+      var CloseCreditsButton = document.getElementById('CloseCreditsButton');
+      // Add an animation component to size down CloseCreditsButton
+      CloseCreditsButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function OpenCreditsFunction() {
+      // Get the WorldCredits element
+      var WorldCredits = document.getElementById('WorldCredits');
+      // Add an animation component to size down WorldCredits
+      WorldCredits.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function CloseOpenCreditsButtionCloseFunction() {
+      // Get the OpenCreditsButton element
+      var OpenCreditsButton = document.getElementById('OpenCreditsButton');
+      // Add an animation component to size down OpenCreditsButton
+      OpenCreditsButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function OpenOpenCreditsButtionFunction() {
+      // Get the OpenCreditsButton element
+      var OpenCreditsButton = document.getElementById('OpenCreditsButton');
+      // Add an animation component to size down OpenCreditsButton
+      OpenCreditsButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }

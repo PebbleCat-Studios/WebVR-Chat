@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <style bgColor="#000000"></style>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="./a-script.wvrc.js"></script> <!-- Put any globle scripts in this file -->
+  </head>
+  <body>
+
+
+    <a-scene light="defaultLightsEnabled: false"> <!-- Edit this value to true if your not working with flat shaders -->
+    
+      <a-entity position="0 .6 0">
+        <a-camera position="0 1.6 0" pointerLockEnabled="true" look-controls="pointerLockEnabled: true;" wasd-controls="acceleration: 0">
+            <a-entity id="mycursor" cursor="fuse: true;"
+            animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.005 0.005 0.005; to: .0175 .0175 .0175"
+            animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: .0175 .0175 .0175; to: 0.005 0.005 0.005"
+            animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: .0175 .0175 .0175"
+            position="0 0 -1"
+            geometry="primitive: ring"
+            scale=".0175 .0175 .0175"
+            material="color: black; shader: flat">
+          </a-entity>
+        </a-camera>
+      </a-entity>
+
+      <!-- Default camera for WVRChat, you can customize it to your liking -->
+
+      <a-assets>
+        <!-- <a-asset-item id="assetItemName" src="./path/to/assetItem.glb"></a-asset-item> -->
+    
+        <!-- <audio id="SoundName" src="./path/to/audio.mp3"></audio> -->
+      </a-assets>
+
+      <!-- Put scene code here -->
+
+    </a-scene>
+    </body>
+    </html>
+
+
+    <!-- Remove me: If subbmited, this will be reviewed and tested by PebbleCat for safty reasons. PebbleCat
+    might make some changes to work with WVRChat.  Copyright rules will still be in place, so don't use
+    copyrighted material unless you can provide proof that you did so. Put any credits in
+    ./assets/Credits.txt-->
+
+   

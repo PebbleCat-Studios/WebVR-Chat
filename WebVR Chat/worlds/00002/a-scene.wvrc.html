@@ -21,8 +21,19 @@
     <script src="./JS/CharacterControler.js"></script>
     <script src="./JS/CharacterControlerAnimations.js"></script>
     <script src="./JS/a-AvitarPositiner.wvrc"></script>
-    <script src="./JS/a-mediaPlayer.wvrc"></script> <!-- Put any globle scripts in this file -->
-    <script src="./a-script.wvrc"></script> <!-- Put any globle scripts in this file -->
+    <script src="./JS/a-mediaPlayer.wvrc"></script>
+    <script src="./a-script.wvrc"></script>
+
+    <!-- Sounds -->
+    <script>var Click2Sou = new Audio('./assets/audio/click2.wav');</script>
+    <script>var Click3Sou = new Audio('./assets/audio/click3.wav');</script>
+    <script>var fadeOutSou = new Audio('./assets/audio/fadeOut.mp3');</script>
+
+    <!-- UI -->
+    <script src="./JS/a.credit.UI.wvrc"></script> 
+    <script src="./JS/a.Music.Slides.wvrc"></script> 
+    <script>OpenCosmosCredit();</script>
+
     
   </head>
   <body>
@@ -78,7 +89,10 @@
       <a-assets>
         <a-asset-item responce-type="arraybuffer" id="WorldGallaryMap" src="./assets/3D models/interdimensional_art_gallery slightly optimized.glb"></a-asset-item>
         <a-asset-item id="navmesh" src="./assets/3D models/NavigationFloor2.glb"></a-asset-item>
-        <a-asset-item responce-type="arraybuffer" id="Character" src="./assets/GLB/defectivefox LOD Close.glb"></a-asset-item>        <!-- Load your GLTF animation -->
+        <a-asset-item responce-type="arraybuffer" id="Character" src="./assets/GLB/defectivefox LOD Close.glb"></a-asset-item>
+        <a-asset-item responce-type="arraybuffer" id="Globe" src="./assets/3D models/earth.glb"></a-asset-item>
+        <!-- Load your GLTF animation -->
+
 
 
 
@@ -103,6 +117,13 @@
       scale="1 1 1"
       gltf-model="#WorldGallaryMap" animation-mixer="clip: ArmatureAction;">
       </a-entity>
+      
+      <a-entity 
+      position="0 7 3"
+      scale="3 3 3"
+      gltf-model="#Globe" animation-mixer="clip: Orbit;">
+      </a-entity>
+
 
       <a-entity id="CameraRig">
         <a-entity 
@@ -129,7 +150,65 @@
             visible="false"
             position="0 0 3"
             gltf-model="#navmesh"></a-entity>
-      
+
+            <!--  UI  -->
+        <a-image src="./assets/images/Music Showcase UI.png" 
+        id="MusicSlideMainUI"
+        rotation="0 0 0"
+        position="0 2 -4.5"
+        height="1" 
+        width=".5"
+        material = "shader:flat; transparent:true;">
+        </a-image>
+
+        <a-image src="./assets/images/Cosmos audio credit slide.png" 
+        id="CosmosCredit"
+        rotation="0 0 0"
+        position="0 1.9 -4.45"
+        height=".5" 
+        width=".33"
+        material = "shader:flat; transparent:true;"
+        animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
+        </a-image>
+
+        <a-image src="./assets/images/Wonder audio credit slide.png" 
+        id="WonderCredit"
+        rotation="0 0 0"
+        position="0 1.9 -4.45"
+        height=".5" 
+        width=".33"
+        material = "shader:flat; transparent:true;"
+        animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
+        </a-image>
+        
+        <a-image src="./assets/images/Universe audio credit slide.png" 
+        id="UniverseCredit"
+        rotation="0 0 0"
+        position="0 1.9 -4.45"
+        height=".5" 
+        width=".33"
+        material = "shader:flat; transparent:true;"
+        animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
+        </a-image>
+        
+        <a-image src="./assets/images/In the sky audio credit slide.png" 
+        id="InTheSkyCredit"
+        rotation="0 0 0"
+        position="0 1.9 -4.45"
+        height=".5" 
+        width=".33"
+        material = "shader:flat; transparent:true;"
+        animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
+        </a-image>
+
+        <a-image src="./assets/images/Letting Go audio credit slide.png" 
+        id="LettingGoCredit"
+        rotation="0 0 0"
+        position="0 1.9 -4.45"
+        height=".5" 
+        width=".33"
+        material = "shader:flat; transparent:true;"
+        animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
 
     </a-scene>
     </body>

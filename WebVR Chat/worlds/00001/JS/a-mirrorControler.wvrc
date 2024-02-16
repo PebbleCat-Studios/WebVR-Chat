@@ -1,0 +1,117 @@
+     //Mirror System
+
+    //Main Mriior Functions
+
+        function HideMainMirror() {
+      // Get the Mirror element
+      var Mirror = document.getElementById('Mirror');
+      // Add an animation component to size down Mirror
+      Mirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '15 7 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function ShowMainMirror() {
+      // Get the Mirror element
+      var Mirror = document.getElementById('Mirror');
+      // Add an animation component to size down Mirror
+      Mirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '15 7 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    //Hide Mirror Button Functions
+
+            function CloseHideMirrorButton() {
+      // Get the HideMirror element
+      var HideMirror = document.getElementById('HideMirror');
+      // Add an animation component to size down HideMirror
+      HideMirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function OpenHideMirrorButton() {
+      // Get the HideMirror element
+      var HideMirror = document.getElementById('HideMirror');
+      // Add an animation component to size down HideMirror
+      HideMirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    //Show Mirror Button Functions
+
+        //Hide Mirror Button Functions
+
+            function CloseShowMirrorButton() {
+      // Get the ShowMirror element
+      var ShowMirror = document.getElementById('ShowMirror');
+      // Add an animation component to size down ShowMirror
+      ShowMirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function OpenShowMirrorButton() {
+      // Get the ShowMirror element
+      var ShowMirror = document.getElementById('ShowMirror');
+      // Add an animation component to size down ShowMirror
+      ShowMirror.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    //Mirror Event Listiners
+
+          document.addEventListener('DOMContentLoaded', function () {
+
+        var ShowMirror = document.getElementById('ShowMirror');
+    
+        ShowMirror.addEventListener('click', function () {
+          // ClickedSou.play();
+          console.log('Hay!');
+          OpenHideMirrorButton();
+          CloseShowMirrorButton();
+          ShowMainMirror();
+        });
+      });  
+
+      document.addEventListener('DOMContentLoaded', function () {
+
+        var HideMirror = document.getElementById('HideMirror');
+    
+
+        HideMirror.addEventListener('click', function () {
+
+          // ClickedSou.play();
+          HideMainMirror();
+          CloseHideMirrorButton();
+          OpenShowMirrorButton();
+        });
+      });  
+      

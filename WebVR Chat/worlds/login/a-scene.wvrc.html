@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <script src="./JS/1.5.0_aframe.min.js"></script>
+    <script src="./JS/aframe-particle-system-component.min.js"></script>
+    <script src="./a-script.wvrc"></script>
+    <script>var ClickedSou = new Audio('./assets/audio/click.mp3');</script>
+    <script>var WorldID = 'login';</script>
+  </head>
+  <body>
+
+
+    <a-scene vr-mode-ui="enabled: false" light="defaultLightsEnabled: false">
+
+  
+
+
+          <a-camera position="0 1.6 0" pointerLockEnabled="true" look-controls="pointerLockEnabled: true;" wasd-controls="acceleration: 0">
+            <a-entity id="mycursor" cursor="fuse: true;"
+              animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.005 0.005 0.005; to: .0175 .0175 .0175"
+              animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: .0175 .0175 .0175; to: 0.005 0.005 0.005"
+              animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: .0175 .0175 .0175"
+              position="0 0 -1"
+              geometry="primitive: ring"
+              scale=".0175 .0175 .0175"
+              material="color: black; shader: flat">
+            </a-entity>
+          </a-camera>
+    
+      <a-assets>
+        <!-- Define the glTF model and assign an ID -->
+        <a-asset-item id="LoginBackground" src="./assets/Login/untitled.glb"></a-asset-item>
+  
+        <audio id="LoginBackgroundMusic" src="./assets/Login/VrChat - loading music.mp3"></audio>
+        <audio id="hoverSound" src="./assets/audio/hover.mp3"></audio>
+      </a-assets>
+
+      <!-- Background sounds with adjusted volumes -->
+      <a-sound id="LoginBackgroundMusic" src="#LoginBackgroundMusic" autoplay="true" loop="true" volume="1"></a-sound>
+
+      <!-- 3D model and environment elements -->
+    <a-image src="./Anouncments/Anouncment page.png" 
+      id="Anouncment1"
+      position="0 2 -3"
+      rotation="0 0 0"
+      height="3" 
+      width="4.25"
+      material = "shader:flat; transparent:true; opacity:.8;">
+    </a-image>
+
+    <a-image src="./Anouncments/Download.png" 
+    animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+    id="DownloadAnouncment"
+    position="0 2 -3"
+    rotation="0 0 0"
+    height="3" 
+    width="4.25"
+    material = "shader:flat; transparent:true; opacity:.8;">
+  </a-image>
+
+    <a-image
+    src="./Anouncments/Buttions/Continue Offline(PC).png" 
+    id="OfflineButton"
+    position="0 1.25 -2.9"
+    rotation="0 0 0"
+    height="0.50" 
+    width="1.5"
+    material="shader: flat; transparent: true; opacity: 0.8;"
+    sound="on: mouseenter; src: #hoverSound"
+  ></a-image>
+
+  <a-image
+  src="./Anouncments/Buttions/Download And Play.png" 
+  animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+  id="DownloadButton"
+  position="0 1.25 -2.9"
+  rotation="0 0 0"
+  height="0.50" 
+  width="1.5"
+  material="shader: flat; transparent: true; opacity: 0.8;"
+  sound="on: mouseenter; src: #hoverSound"
+></a-image>
+
+
+      <a-entity
+        gltf-model="#LoginBackground"
+        position="0 0 0"
+        scale="5 5 5"
+        material="shader: flat;"
+        shader="flat"
+      ></a-entity>
+
+      <a-entity position="0 0 0" randomise="true" particle-system="preset: dust; size: .75 .5 1; opacity: .3 .25 .2 .15 .1; opacitySpread: .2 .1 .5 0; type: 3; maxAge: 30; velocityValue: 0 0 0; particleCount: 201"></a-entity>
+
+    </a-scene>
+    </body>
+    </html>
+
+   

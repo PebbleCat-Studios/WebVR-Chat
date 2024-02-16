@@ -1,0 +1,176 @@
+
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the OfflineButton element
+      var offlineButton = document.getElementById('OfflineButton');
+  
+      // Add a click event listener to the button
+      offlineButton.addEventListener('click', function () {
+        // Call the animateAnouncment1 function when the button is clicked
+        ClickedSou.play();
+        animateAnouncment1();
+        animateOfflineButton();
+        setTimeout(() => {
+          console.log('World!');
+          animateDownloadAnouncment();
+          animateDownloadButton();
+        }, 1500);
+
+      });
+    });
+  
+    // Function to animate Anouncment1
+    function animateAnouncment1() {
+      // Get the Anouncment1 element
+      var anouncment1 = document.getElementById('Anouncment1');
+  
+      // Add an animation component to size down Anouncment1
+      anouncment1.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function animateOfflineButton() {
+      // Get the OfflineButton element
+      var OfflineButton = document.getElementById('OfflineButton');
+      // Add an animation component to size down OfflineButton
+      OfflineButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+  
+    function animateDownloadButton() {
+      // Get the DownloadButton element
+      var DownloadButton = document.getElementById('DownloadButton');
+      // Add an animation component to size down DownloadButton
+      DownloadButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+    function animateDownloadAnouncment() {
+      // Get the DownloadAnouncment element
+      var DownloadAnouncment = document.getElementById('DownloadAnouncment');
+      // Add an animation component to size down DownloadAnouncment
+      DownloadAnouncment.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+    
+  // Wait for the document to be fully loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the OfflineButton element
+    var DownloadButton = document.getElementById('DownloadButton');
+
+    // Add a click event listener to the button
+    DownloadButton.addEventListener('click', function () {
+      // Call the animateAnouncment1 function when the button is clicked
+      ClickedSou.play();
+      animateLoadButton();
+      animateDownloadAnouncmentClose();
+      setTimeout(() => {
+          var WorldID = '00001';
+          parent.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
+          changeWorldID(WorldID);
+          fadeOut();
+        }, 750);
+    });
+  });  
+
+  function animateLoadButton() {
+      // Get the DownloadAnouncment element
+      var DownloadAnouncment = document.getElementById('DownloadAnouncment');
+      // Add an animation component to size down DownloadAnouncment
+      DownloadAnouncment.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+  
+    function animateDownloadAnouncmentClose() {
+      // Get the DownloadButton element
+      var DownloadButton = document.getElementById('DownloadButton');
+      // Add an animation component to size down DownloadButton
+      DownloadButton.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+    }
+
+// Function to fade out the screen
+// Function to fade out the screen and unload the scene
+function fadeOut() {
+  // Pause the background music
+  var audioElement = document.getElementById('LoginBackgroundMusic');
+  audioElement.pause();
+  // Optionally, rewind the background music to the beginning
+  audioElement.currentTime = 0;
+
+  // Continue with fading out the scene after a delay
+  setTimeout(fadeOutScene, 100);
+}
+
+// Function to fade out the scene
+function fadeOutScene() {
+  // Get the scene element and camera position
+  var scene = document.querySelector('a-scene');
+  var camera = document.querySelector('[camera]');
+
+  // Calculate the position of the plane in front of the camera
+  var cameraPosition = camera.getAttribute('position');
+  var planePosition = {
+    x: cameraPosition.x,
+    y: cameraPosition.y,
+    z: cameraPosition.z,  // Adjust the distance based on your scene setup
+  };
+
+  // Create a black plane to cover the entire view
+  var blackoutEntity = document.createElement('a-box');
+  blackoutEntity.setAttribute('material', 'color: black; shader: flat; opacity: 0; side: double');
+  blackoutEntity.setAttribute('position', planePosition);
+  blackoutEntity.setAttribute('width', 10);
+  blackoutEntity.setAttribute('height', 10);
+
+  scene.appendChild(blackoutEntity);
+
+  // Add an animation component to fade out the plane
+  blackoutEntity.setAttribute('animation__fade', {
+    property: 'material.opacity',
+    dur: 2000,         // Animation duration in milliseconds
+    from: 0,           // Initial opacity (fully transparent)
+    to: 1,             // Target opacity (fully opaque)
+    easing: 'linear'   // Animation easing function
+  });
+}
+    // Example: Change WorldID in the iframe and notify the parent
+    function changeWorldID(newWorldID) {
+      WorldID = newWorldID;
+      console.log('WorldID updated in iframe:', WorldID);
+
+      // Notify the parent about the updated WorldID
+      parent.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
+    }
+
+    

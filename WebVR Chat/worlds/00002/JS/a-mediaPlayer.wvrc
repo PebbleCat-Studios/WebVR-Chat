@@ -1,4 +1,5 @@
-var MusicVolume = '30';
+var MusicVolume = '4';
+
 
 AFRAME.registerComponent('global-soundtrack', {
   init: function () {

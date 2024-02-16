@@ -93,7 +93,9 @@
         var ShowMirror = document.getElementById('ShowMirror');
     
         ShowMirror.addEventListener('click', function () {
+
           Click3Sou.play();
+
           OpenHideMirrorButton();
           CloseShowMirrorButton();
           ShowMainMirror();
@@ -107,7 +109,9 @@
 
         HideMirror.addEventListener('click', function () {
 
+
           Click2Sou.play();
+
           HideMainMirror();
           CloseHideMirrorButton();
           OpenShowMirrorButton();

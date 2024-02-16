@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add a click event listener to the button
     OpenWorldGallaryWarning.addEventListener('click', function () {
+
       Click3Sou.play();
+
       CloseWordGallaryPopupButton();
       OpenWorldGallaryLoadinWarning();
       OpenWorldWarpAccept();
@@ -20,7 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add a click event listener to the button
     WorldWarpAccept.addEventListener('click', function () {
+    
       Click3Sou.play();
+
       setTimeout(() => {
         var WorldID = '00002';
         parent.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
@@ -38,11 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add a click event listener to the button
     WorldWarpCancle.addEventListener('click', function () {
       // Call the animateAnouncment1 function when the button is clicked
+
       Click2Sou.play();
+
       OpenWordGallaryPopupButton();
       CloseWorldGallaryLoadinWarning();
       CloseWorldWarpAccept();
       CloseWorldWarpCancle();
+
 
     });
   });  

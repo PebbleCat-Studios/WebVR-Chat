@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <style>
+      /* Set background color */
+      body {
+        background-color: #000000;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="./JS/1.5.0_aframe.min.js"></script>
+    <script src="./JS/aframe-particle-system-component.min.js"></script>
+    <script src="./JS/a-AvitarPositiner.wvrc"></script>
+    <script src="./JS/CharacterControlerAnimations.js"></script>
+    <script src="./JS/CharacterControler.js"></script>
+    <script src="./dist/aframe-physics-system.min.js"></script>
+    <script src="./JS/aframe-environment-component.min.js"></script>
+    <script src="./JS/aframe-extras.js"></script>
+    <script src="./JS/a-script-JoinWorld.wvrc"></script>
+    <script src="./JS/a-script-credits.wvrc"></script>
+    <script src="./JS/mirror.umd.min.js"></script>
+    <script src="./JS/a-mirrorControler.wvrc"></script>
+    <script src="./JS/a-script-worldTransfer.wvrc"></script>
+    <script src="./a-script.wvrc"></script>
+    <script src="./JS/aframe-effects.js"></script>
+    <script>var Click2Sou = new Audio('./assets/audio/click2.wav');</script>
+    <script>var Click3Sou = new Audio('./assets/audio/click3.wav');</script>
+      <script>var fadeOutSou = new Audio('./assets/audio/fadeOut.mp3');</script>
+  </head>
+  <body>
+    <a-scene physics="gravity: -9.8; debug: false" log-position2 keyboard-events scene-behavior>
+      <!-- Rounded Cylinder to represent the body -->
+      
+      <a-entity position="0 30 0" global-soundtrack></a-entity>
+
+      <a-entity id="rig"
+      movement-controls="constrainToNavMesh: true;
+                         controls: checkpoint, gamepad, trackpad, keyboard, nipple;"
+      position="0 0 0"
+      log-position>
+      <a-entity camera
+      id="MainCamera"
+        position="99 99 99"
+        rotation="0 180 0"
+        look-controls="pointerLockEnabled: true">
+</a-entity>
+</a-entity>
+
+<a-entity id="CameraRig">
+  <a-entity 
+  position="0 1.60 40"
+  scale=".225 .225 .225"
+  rotation="0 0 0"
+  gltf-model="#Character" id="Avitar" animation-mixer="clip: Idle;">
+  <a-entity id="CameraRigger" color="purple" rotation="0 180 0" position="0 10 10"  log-position2>
+    <a-camera id="ViewingCamera"  active="true" wasd-controls="acceleration: 0" look-controles>
+      <a-entity id="mycursor" cursor="fuse: true;"
+      animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.00005 0.00005 0.00005; to: .000175 .000175 .00175"
+      animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: .000175 .000175 .000175; to: 0.00005 0.00005 0.00005"
+      animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: .000175 .000175 .000175"
+      position="0 0 -.01"
+      geometry="primitive: ring"
+      scale=".000175 .000175 .000175"
+      material="color: black; shader: flat"
+      >
+    </a-entity>
+    </a-camera>
+  </a-entity>
+  </a-entity>
+</a-entity>
+
+      <a-assets>
+        <a-asset-item id="SkyBox" src="./assets/3D models/SkyBox.glb"></a-asset-item>
+        <a-asset-item id="ChillZone" src="./assets/3D models/chillzone.glb"></a-asset-item>
+        <a-asset-item id="navmesh" src="./assets/3D models/chillzoneNavMesh.glb"></a-asset-item>
+        <!-- <audio id="SoundName" src="./path/to/audio.mp3"></audio> -->
+        <audio id="lavender" src="./assets/audio/lavender.mp3"></audio>
+        <audio id="honey_jam" src="./assets/audio/honey_jam.mp3"></audio>
+        <audio id="aromatic" src="./assets/audio/aromatic.mp3"></audio>
+        <a-asset-item responce-type="arraybuffer" id="Character" src="./assets/GLB/defectivefox LOD Close.glb"></a-asset-item>        <!-- Load your GLTF animation -->
+      </a-assets>
+
+      <a-light type="ambient" color="#555"></a-light>
+
+
+      <!-- Mirror functions -->
+
+      <a-mirror 
+      id="Mirror"
+      position="0 0 -9.5" 
+      scale="15 7 1"
+      animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;">
+      </a-mirror>
+
+      <a-image src="./assets/images/MirrorButton.png" 
+      id="ShowMirror"
+      position="6.525 .25 -8.5"
+      rotation="0 270 0"
+      height=".2" 
+      width=".6"
+      material = "shader:flat; transparent:true; opacity:.8;">
+      </a-image>
+
+      <a-image src="./assets/images/Close Button.png" 
+      id="HideMirror"
+      animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;"
+      position="6.525 .25 -8.5"
+      rotation="0 270 0"
+      height=".2" 
+      width=".6"
+      material = "shader:flat; transparent:true; opacity:.8;">
+      </a-image>
+
+      <!-- WorldGallary Teleporter -->
+
+      <a-image src="./assets/images/WorldGallaryLoadin Warning.png" 
+      id="WorldGallaryLoadinWarning"
+      animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+      position="1.75 1.75 3.7"
+      rotation="0 180 0"
+      height="2.5" 
+      width="2.4"
+      material = "shader:flat; transparent:true; opacity:.8;">
+    </a-image>
+      
+      <a-image src="./assets/images/Explore Worlds.png" 
+      id="WordGallaryPopupButton"
+      position=".75 1.25 4.1"
+      rotation="0 180 0"
+      height=".2" 
+      width=".6"
+      material = "shader:flat; transparent:true; opacity:.8;">
+    </a-image>
+
+    <a-image src="./assets/images/WorldWarpCancle.png" 
+    id="WorldWarpCancle"
+    animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+    position="2.43 0.8 3.69"
+    rotation="0 180 0"
+    height=".2" 
+    width=".6"
+    material = "shader:flat; transparent:true; opacity:.8;">
+  </a-image>
+
+  <a-image src="./assets/images/WorldWarpAccept.png" 
+  id="WorldWarpAccept"
+  animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+  position="2.43 1.1 3.69"
+  rotation="0 180 0"
+  height=".2" 
+  width=".6"
+  material = "shader:flat; transparent:true; opacity:.8;"> 
+</a-image>
+
+      <!-- Credits Objects -->
+    <a-image src="./assets/images/Credits Page.png" 
+      id="WorldCredits"
+      animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+      position="4.25 2.1 4.1"
+      rotation="0 180 0"
+      height="3" 
+      width="2.9"
+      material = "shader:flat; transparent:true; opacity:.8;">
+    </a-image>
+
+    <a-image src="./assets/images/Close Button.png" 
+    id="CloseCreditsButton"
+    animation="property: scale; dur: 1; from: 1 1 1; to: 0 0 0;";
+    position=".75 1 4.1"
+    rotation="0 180 0"
+    height=".2" 
+    width=".6"
+    material = "shader:flat; transparent:true; opacity:.8;">
+  </a-image>
+
+  <a-image src="./assets/images/OpenCreditsButton.png" 
+  id="OpenCreditsButton"
+  position=".75 1 4.1"
+  rotation="0 180 0"
+  height=".2" 
+  width=".6"
+  material = "shader:flat; transparent:true; opacity:.8;">
+</a-image>
+
+  <!-- Map Bounds And Logic -->
+
+            <!-- Nav mesh. -->
+            <a-entity nav-mesh
+            normal-material
+            visible="false"
+            position="0 0 0"
+            gltf-model="#navmesh"></a-entity>
+
+      <a-entity
+        gltf-model="#SkyBox"
+        position="0 0 0"
+        scale="4 4 4"
+        material="shader: flat;"
+        animation="property: rotation; from: 0 0 0; to: -360 0 0; dur: 650000; easing: linear; loop: true">
+      </a-entity>
+
+      <a-entity position="0 0 0"
+      scale="1 1 1"
+      gltf-model="#ChillZone">
+</a-entity>
+    
+      <a-entity position="0 0 0" randomise="true" particle-system="preset: dust; size: .25 .2 .1; opacity: .3 .25 .2 .15 .1; opacitySpread: .2 .1 .5 0; type: 1; maxAge: 30; velocityValue: 0 0 0; particleCount: 500"></a-entity>
+
+
+    </a-scene>
+  </body>
+</html>

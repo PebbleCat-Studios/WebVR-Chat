@@ -1,0 +1,35 @@
+    //CosmosCredit
+    
+    function OpenCosmosCredit() {
+      // Get the CosmosCredit element
+      var CosmosCredit = document.getElementById('CosmosCredit');
+      // Add an animation component to size down CosmosCredit
+      CosmosCredit.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '0 0 0',  // Initial scale
+        to: '1 1 1',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+
+      setTimeout(() => {
+        CloseCosmosCredit();
+      }, 3000);
+    }
+
+        function CloseCosmosCredit() {
+      // Get the CosmosCredit element
+      var CosmosCredit = document.getElementById('CosmosCredit');
+      // Add an animation component to size down CosmosCredit
+      CosmosCredit.setAttribute('animation', {
+        property: 'scale',
+        dur: 1000,  // Animation duration in milliseconds
+        from: '1 1 1',  // Initial scale
+        to: '0 0 0',   // Target scale
+        easing: 'easeInOutQuad'  // Animation easing function
+      });
+
+            setTimeout(() => {
+        openCosmosCredit();
+      }, 250);
+    }

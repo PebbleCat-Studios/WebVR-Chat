@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./JS/1.5.0_aframe.min.js"></script>
+        <script src="./JS/aframe-environment-component.min.js"></script>
+    <script src="./JS/aframe-extras.min.js"></script>
+    <script src="./JS/CharacterControler.js"></script>
+    <script src="./JS/CharacterControlerAnimations.js"></script>
+  </head>
+  <body>
+    <a-scene keyboard-events scene-behavior>
+      <a-assets>
+        <!-- Load your GLB model -->
+        <a-asset-item responce-type="arraybuffer" id="Character" src="./assets/GLB/untitled.glb"></a-asset-item>        <!-- Load your GLTF animation -->
+      </a-assets>
+
+            <a-entity 
+      position="0 .75 3"
+      scale=".1 .1 .1"
+      gltf-model="#Character" id="Avitar" animation-mixer="clip: Idle;">
+      </a-entity>
+
+      <!-- Optionally, add lights, camera, etc. -->
+      <a-entity light="type: point; intensity: 0.5;"></a-entity>
+      <a-entity camera position="0 1.6 5" wasd-controls="acceleration: 3;"  look-controls="pointerLockEnabled: true"></a-entity>
+
+      <script>
+      var loader = new THREE.GLTFLoader();
+
+        loader.load('./assets/GLB/untitled.glb', function (gltf) {
+            gltf.animations.forEach(function (clip) {
+                console.log(clip.name);
+            });
+        });
+</script>
+
+
+    </a-scene>
+  </body>
+</html>

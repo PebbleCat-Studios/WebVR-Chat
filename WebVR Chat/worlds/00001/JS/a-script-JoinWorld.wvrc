@@ -1,0 +1,166 @@
+//Listiners
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the OfflineButton element
+    var OpenWorldGallaryWarning = document.getElementById('WordGallaryPopupButton');
+
+    // Add a click event listener to the button
+    OpenWorldGallaryWarning.addEventListener('click', function () {
+      Click3Sou.play();
+      CloseWordGallaryPopupButton();
+      OpenWorldGallaryLoadinWarning();
+      OpenWorldWarpAccept();
+      OpenWorldWarpCancle();
+    });
+  });  
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the OfflineButton element
+    var WorldWarpAccept = document.getElementById('WorldWarpAccept');
+
+    // Add a click event listener to the button
+    WorldWarpAccept.addEventListener('click', function () {
+      Click3Sou.play();
+      setTimeout(() => {
+        var WorldID = '00002';
+        parent.postMessage({ type: 'updateWorldID', value: WorldID }, '*');
+        changeWorldID(WorldID);
+        fadeOutScene();
+      }, 750);
+
+    });
+  });  
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the OfflineButton element
+    var WorldWarpCancle = document.getElementById('WorldWarpCancle');
+
+    // Add a click event listener to the button
+    WorldWarpCancle.addEventListener('click', function () {
+      // Call the animateAnouncment1 function when the button is clicked
+      Click2Sou.play();
+      OpenWordGallaryPopupButton();
+      CloseWorldGallaryLoadinWarning();
+      CloseWorldWarpAccept();
+      CloseWorldWarpCancle();
+
+    });
+  });  
+
+
+
+  //Animation Scripts
+
+  //World Gallery Buttion
+  function CloseWordGallaryPopupButton() {
+    // Get the WordGallaryPopupButton element
+    var WordGallaryPopupButton = document.getElementById('WordGallaryPopupButton');
+    // Add an animation component to size down WordGallaryPopupButton
+    WordGallaryPopupButton.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '1 1 1',  // Initial scale
+      to: '0 0 0',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+  function OpenWordGallaryPopupButton() {
+    // Get the WordGallaryPopupButton element
+    var WordGallaryPopupButton = document.getElementById('WordGallaryPopupButton');
+    // Add an animation component to size down WordGallaryPopupButton
+    WordGallaryPopupButton.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '0 0 0',  // Initial scale
+      to: '1 1 1',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+
+  //World Gallary Warning
+
+  function CloseWorldGallaryLoadinWarning() {
+    // Get the WorldGallaryLoadinWarning element
+    var WorldGallaryLoadinWarning = document.getElementById('WorldGallaryLoadinWarning');
+    // Add an animation component to size down WorldGallaryLoadinWarning
+    WorldGallaryLoadinWarning.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '1 1 1',  // Initial scale
+      to: '0 0 0',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+  function OpenWorldGallaryLoadinWarning() {
+    // Get the WorldGallaryLoadinWarning element
+    var WorldGallaryLoadinWarning = document.getElementById('WorldGallaryLoadinWarning');
+    // Add an animation component to size down WorldGallaryLoadinWarning
+    WorldGallaryLoadinWarning.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '0 0 0',  // Initial scale
+      to: '1 1 1',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+  //Accept Button
+
+  function CloseWorldWarpAccept() {
+    // Get the WorldWarpAccept element
+    var WorldWarpAccept = document.getElementById('WorldWarpAccept');
+    // Add an animation component to size down WorldWarpAccept
+    WorldWarpAccept.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '1 1 1',  // Initial scale
+      to: '0 0 0',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+  function OpenWorldWarpAccept() {
+    // Get the WorldWarpAccept element
+    var WorldWarpAccept = document.getElementById('WorldWarpAccept');
+    // Add an animation component to size down WorldWarpAccept
+    WorldWarpAccept.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '0 0 0',  // Initial scale
+      to: '1 1 1',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+
+
+  //Deny button
+
+  function CloseWorldWarpCancle() {
+    // Get the WorldWarpCancle element
+    var WorldWarpCancle = document.getElementById('WorldWarpCancle');
+    // Add an animation component to size down WorldWarpCancle
+    WorldWarpCancle.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '1 1 1',  // Initial scale
+      to: '0 0 0',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }
+
+  function OpenWorldWarpCancle() {
+    // Get the WorldWarpCancle element
+    var WorldWarpCancle = document.getElementById('WorldWarpCancle');
+    // Add an animation component to size down WorldWarpCancle
+    WorldWarpCancle.setAttribute('animation', {
+      property: 'scale',
+      dur: 1000,  // Animation duration in milliseconds
+      from: '0 0 0',  // Initial scale
+      to: '1 1 1',   // Target scale
+      easing: 'easeInOutQuad'  // Animation easing function
+    });
+  }

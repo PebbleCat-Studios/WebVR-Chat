@@ -1,0 +1,35 @@
+AFRAME.registerComponent('log-position', {
+  tick: function () {
+      var cameraEl = document.getElementById('MainCamera');
+      var rigEl = document.getElementById('rig');
+      var position = rigEl.getAttribute('position');
+      var rotation = cameraEl.getAttribute('rotation');
+      // console.log('Object position:', position);
+      // console.log('Object rotation:', rotation);
+
+      // Set the position of the box based on camera's position along x and z axes
+      var boxEl = document.getElementById('Avitar');
+      boxEl.setAttribute('position', { x: position.x, y: position.y, z: position.z });
+
+      // Set the rotation of the box based on camera's rotation along the y-axis
+      boxEl.setAttribute('rotation', { x: 0, y: rotation.y + 180 * -1, z: 0 });
+  }
+});
+
+//Camera Rig positiner
+
+AFRAME.registerComponent('log-position2', {
+  tick: function () {
+      var CameraRiggerEl = document.getElementById('CameraRigger');
+      var position = CameraRiggerEl.getAttribute('position');
+      var cameraEl = document.getElementById('MainCamera');
+      var rotation = cameraEl.getAttribute('rotation');
+
+
+      // Set the position of the box based on camera's position along x and z axes
+      var boxEl = document.getElementById('Avitar');
+      CameraRiggerEl.setAttribute('position', { x: position.x, y: POVLY, z: POVLZ });
+
+      CameraRiggerEl.setAttribute('rotation', { x: rotation.x, y: POVRY, z: rotation.z });
+
+  }})

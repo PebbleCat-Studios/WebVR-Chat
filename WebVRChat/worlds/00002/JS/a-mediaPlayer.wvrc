@@ -1,0 +1,36 @@
+var MusicVolume = '30';
+
+AFRAME.registerComponent('global-soundtrack', {
+  init: function () {
+    // List of audio assets
+    this.audioAssets = ['#cosmos', '#Universe', '#Helen', '#InTheSky', '#Sleep', '#Wander'];
+
+    // Shuffle the audio assets
+    this.audioAssets.sort(() => Math.random() - 0.5);
+
+    // Set the shuffled playlist
+    this.currentTrackIndex = 0;
+    this.playNextTrack();
+
+    // Listen for sound-ended event
+    this.el.addEventListener('sound-ended', () => {
+              setTimeout(() => {
+                this.playNextTrack();
+        }, Math.random() * (45 - 20) + 20);
+    });
+  },
+  playNextTrack: function () {
+    // Play the next track in the shuffled playlist
+    this.el.setAttribute('sound', 'src', this.audioAssets[this.currentTrackIndex]);
+    this.el.setAttribute('sound', 'autoplay', true);
+ setTimeout(() => {
+
+    this.el.setAttribute('sound', 'volume', MusicVolume);
+        }, 750);
+
+    // Move to the next track in the playlist
+    this.currentTrackIndex = (this.currentTrackIndex + 1) % this.audioAssets.length;
+  }
+});
+
+

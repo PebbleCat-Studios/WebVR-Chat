@@ -1,6 +1,10 @@
 
 // Function to fade out the scene
 function fadeOutScene() {
+
+
+  fadeOutSou.play();
+
   // Get the scene element and camera position
   var scene = document.querySelector('a-scene');
   var camera = document.getElementById('rig');

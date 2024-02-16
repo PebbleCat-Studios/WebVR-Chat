@@ -7,7 +7,10 @@
         // Add a click event listener to the button
         OpenCreditsButton.addEventListener('click', function () {
           // Call the animateAnouncment1 function when the button is clicked
-          // ClickedSou.play();
+
+
+          Click3Sou.play();
+
           OpenCreditsFunction();
           OpenCreditsCloseFunction();
           OpenOpenCreditsButtionFunction();
@@ -23,7 +26,9 @@
         CloseCreditsButton.addEventListener('click', function () {
           // Call the animateAnouncment1 function when the button is clicked
           console.log('Buttion Pressed!');
-          // ClickedSou.play();
+
+          Click2Sou.play();
+
           CloseCreditsFunction();
           CloseCreditsCloseFunction();
           CloseOpenCreditsButtionCloseFunction();

@@ -27,6 +27,12 @@
     <script src="./JS/a-mirrorControler.wvrc"></script>
     <script src="./JS/a-script-worldTransfer.wvrc"></script>
     <script src="./a-script.wvrc"></script>
+
+    
+    <script>var Click2Sou = new Audio('./assets/audio/click2.wav');</script>
+    <script>var Click3Sou = new Audio('./assets/audio/click3.wav');</script>
+      <script>var fadeOutSou = new Audio('./assets/audio/fadeOut.mp3');</script>
+
   </head>
   <body>
     <a-scene physics="gravity: -9.8; debug: false" log-position2 keyboard-events scene-behavior>
@@ -50,10 +56,11 @@
 <a-entity id="CameraRig">
   <a-entity 
   position="0 1.60 40"
-  scale=".22 .22 .22"
+  scale=".225 .225 .225"
   rotation="0 0 0"
   gltf-model="#Character" id="Avitar" animation-mixer="clip: Idle;">
-  <a-entity id="CameraRigger" color="purple" rotation="0 180 0" position="0 9 10"  log-position2>
+  <a-entity id="CameraRigger" color="purple" rotation="0 180 0" position="0 10 10"  log-position2>
+
     <a-camera id="ViewingCamera"  active="true" wasd-controls="acceleration: 0" look-controles>
       <a-entity id="mycursor" cursor="fuse: true;"
       animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.00005 0.00005 0.00005; to: .000175 .000175 .00175"

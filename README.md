@@ -1,4 +1,4 @@
-<h1>WebVR Chat                                                         0.2.1</h1>
+<h1>WebVR Chat                                                         V: 0.2.1</h1>
 
 <p> ㅤㅤWebVR Chat is a 3d/vr space to interact with one another! This project is inspiered by VRChat, but I dont intend to clone it, just make the consept of it web-friendly. My plan is to have it be able to run on moble, computer, and mayby VR headsets, though serious testing will be needed.:3</p>
 

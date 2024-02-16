@@ -7,6 +7,7 @@
       // Add a click event listener to the button
       offlineButton.addEventListener('click', function () {
         // Call the animateAnouncment1 function when the button is clicked
+        var ClickedSou = new Audio('./assets/audio/click3.wav');
         ClickedSou.play();
         animateAnouncment1();
         animateOfflineButton();

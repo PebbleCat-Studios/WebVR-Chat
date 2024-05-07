@@ -8,7 +8,7 @@
 
 <p>ㅤㅤIt's easy, you can use </p>
 
-`git clone https://github.com/funing36/WebVR-Chat.git`
+`git clone https://github.com/PebbleCat-Studios/WebVR-Chat.git`
 
 <p>ㅤㅤOnce downloaded, some computers will allow you to run a local host directly from your computer, but most of the time, you'll need help to get it working. I would recomend using Github Codespaces or VSCode and have the extention "Live Server", then open up "/WebVRChat/index.html" and press go live on the bottom right.</p>
 

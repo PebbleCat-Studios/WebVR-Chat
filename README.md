@@ -16,3 +16,8 @@
 <br>
 <p>   For now, for testing, I will be using <a href="https://sketchfab.com/3d-models/chillzone-custom-home-9467bacb4dab48c4b908805846346784">SideQuest's Chillzone</a> world as testing and maybe the default home world until I make my own and will be using my <b>VRChat Avatar</b> (img below) for the player until I find my own. I'm sure the creators of the avatars don't want the FBX to be shared. :/</p>
 <img src="https://github.com/user-attachments/assets/ce90b6d1-f745-40f9-878a-7868962d174e">
+<br>
+<h1>What I hope to have in the far future:</h1>
+<li>Lip sync (will have to be done using my servers using todays browser capability and is a bit taxing on the servers)</li>
+<li>FBT (I figure this will need separate software and might not be possible, I haven't reperched it yet. :/)</li>
+<li>To be able upload avi/world without manual inspection/upload (This, itself, will be a tone of work, and catching users making changes to the actual source code... Yah, a lot of thinking will need to be done)</li>

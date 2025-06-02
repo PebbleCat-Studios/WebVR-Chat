@@ -19,5 +19,5 @@
 <br>
 <h1>What I hope to have in the far future:</h1>
 <li>Lip sync (will have to be done using my servers using todays browser capability and is a bit taxing on the servers)</li>
-<li>FBT (I figure this will need separate software and might not be possible, I haven't reperched it yet. :/)</li>
+<li>FBT (I figure this will need separate software and might not be possible, I haven't researched it yet. :/)</li>
 <li>To be able upload avi/world without manual inspection/upload (This, itself, will be a tone of work, and catching users making changes to the actual source code... Yah, a lot of thinking will need to be done)</li>
